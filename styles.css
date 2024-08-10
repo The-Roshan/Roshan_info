@@ -21,16 +21,12 @@ body {
     }
 }
 
-/* Container styles */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px; /* Increased padding on both sides */
+    padding: 0 20px; /* Adjusted padding for better spacing */
 }
-
-/* Rest of the styles remain unchanged */
-
 
 header {
     background: #007bff; /* Blue background color */
@@ -71,7 +67,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 nav ul li a {
@@ -90,28 +86,19 @@ nav ul li a {
     color: #fff;
 }
 
-/* Main section styles */
-main {
-    margin-top: 20px;
-}
-
-.skills-list, .contact-info {
-    list-style: none;
-    padding: 0;
-}
-
+/* Section styles */
 .skills-list li, .edu, .job {
     position: relative;
     padding: 10px;
     margin: 10px 0;
     background: #fff; /* White background for sections */
     border-radius: 8px;
-    border: 1px solid #ddd; /* Light gray border */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent; /* Initially transparent border */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .skills-list li:hover, .edu:hover, .job:hover {
-    background: #f8f9fa; /* Light gray background on hover */
+    border-color: #007bff; /* Blue border on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
 }
 
@@ -133,17 +120,8 @@ main {
     background-color: #218838; /* Darker green on hover */
 }
 
-.skills-list li:hover .cert-btn, .edu:hover .cert-btn {
+.skills-list li:hover .cert-btn, .edu:hover .cert-btn, .job:hover .cert-btn {
     display: inline-block;
-}
-
-.contact-info li {
-    padding: 5px 0;
-    font-size: 1.1rem;
-}
-
-.contact-info i {
-    margin-right: 10px;
 }
 
 /* Footer styles */
@@ -161,15 +139,19 @@ footer p {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 15px; /* Less padding on mobile */
-    }
-
     .header-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Center align items for better mobile layout */
     }
     
+    .header-text h1 {
+        text-align: center; /* Center align the name */
+    }
+
+    .profile-img {
+        margin-top: 20px;
+    }
+
     .hamburger {
         display: block;
     }
@@ -192,13 +174,5 @@ footer p {
     
     nav ul li a {
         display: block;
-    }
-    
-    .header-content img {
-        margin-top: 20px;
-    }
-
-    main {
-        padding-left: 20px; /* Less padding for main content on mobile */
     }
 }
