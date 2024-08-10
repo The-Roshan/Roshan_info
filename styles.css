@@ -1,17 +1,36 @@
 /* General styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #e9ecef;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #02d9fe, #ffe767); /* Gradient with multiple colors */
+    background-size: 800% 800%; /* Larger size for smoother transition */
+    animation: gradientBG 30s ease infinite; /* Apply continuous animation */
 }
 
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container styles */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px; /* Increased padding on both sides */
 }
+
+/* Rest of the styles remain unchanged */
+
 
 header {
     background: #007bff; /* Blue background color */
