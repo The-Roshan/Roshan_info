@@ -184,6 +184,6 @@ footer p {
     }
 
     .container {
-        padding: 0 0px; /* Ensure content fits within viewport */
+        padding: 0 10px; /* Ensure content fits within viewport */
     }
 }
