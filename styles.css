@@ -25,7 +25,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Adjusted padding for better spacing */
+    padding: 0 15px; /* Adjusted padding for better spacing */
 }
 
 header {
@@ -64,6 +64,7 @@ nav ul {
     list-style: none;
     margin-top: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -168,11 +169,21 @@ footer p {
     
     nav ul li {
         width: 100%;
-        text-align: left;
+        text-align: center; /* Center align the links */
         padding: 10px 0;
     }
     
     nav ul li a {
         display: block;
+    }
+
+    /* Adjusting for mobile */
+    body, html {
+        width: 100%; /* Ensure no overflow */
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    .container {
+        padding: 0 10px; /* Ensure content fits within viewport */
     }
 }
