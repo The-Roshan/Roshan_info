@@ -125,6 +125,30 @@ body {
     }
 }
 
+/* Footer styles */
+footer {
+    background: #007bff; /* Blue background color */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header-content {
+        text-align: center;
+    }
+
+    .download-cv-btn {
+        margin-top: 15px; /* Adjust margin for mobile view if needed */
+    }
+}
+
 /* Container styles */
 .container {
     width: 100%;
