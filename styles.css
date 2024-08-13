@@ -4,9 +4,11 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal overflow */
-    background: linear-gradient(270deg, #ff6ec4, #7873f5, #02d9fe, #ffe767); /* Gradient with multiple colors */
+    background: linear-gradient(270deg, #42c2227e, #7873f5, #02d9fe, #ffe767); /* Gradient with multiple colors */
     background-size: 800% 800%; /* Larger size for smoother transition */
     animation: gradientBG 30s ease infinite; /* Apply continuous animation */
+    position: relative;
+    min-height: 100vh; /* Ensure the body takes full viewport height */
 }
 
 @keyframes gradientBG {
@@ -21,18 +23,71 @@ body {
     }
 }
 
+/* Snow animation */
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.snow:before, .snow:after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(6px 6px at 20% 20%, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(3px 3px at 30% 30%, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(5px 5px at 40% 40%, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(4px 4px at 50% 50%, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(7px 7px at 60% 60%, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(8px 8px at 70% 70%, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(5px 5px at 80% 80%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)),
+                      radial-gradient(6px 6px at 90% 90%, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0));
+    background-size: 500px 500px;
+    animation: snow 10s linear infinite;
+}
+
+.snow:after {
+    opacity: 0.4;
+    animation-duration: 15s;
+    animation-direction: reverse;
+    filter: blur(3px);
+}
+
+.snow:before {
+    opacity: 0.65;
+    animation-duration: 20s;
+    animation-direction: reverse;
+    filter: blur(1.5px);
+}
+
+@keyframes snow {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Container styles */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px; /* Adjusted padding for better spacing */
+    padding: 0 15px; /* Adjusted padding for better spacing */
 }
 
+/* Header styles */
 header {
     background: #007bff; /* Blue background color */
     color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
+    padding: 20px 0;
     border-bottom: #ffc107 3px solid; /* Yellow border */
 }
 
@@ -55,6 +110,7 @@ header {
     border: 3px solid #ffc107; /* Yellow border */
 }
 
+/* Navigation styles */
 nav {
     margin-top: 10px;
 }
@@ -64,7 +120,6 @@ nav ul {
     list-style: none;
     margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -92,10 +147,11 @@ nav ul li a {
     position: relative;
     padding: 10px;
     margin: 10px 0;
-    background: #fff; /* White background for sections */
+    background: rgba(255, 255, 255, 0.2); /* Transparent background */
     border-radius: 8px;
     border: 1px solid transparent; /* Initially transparent border */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    backdrop-filter: blur(10px); /* Apply blur effect */
 }
 
 .skills-list li:hover, .edu:hover, .job:hover {
@@ -169,21 +225,11 @@ footer p {
     
     nav ul li {
         width: 100%;
-        text-align: center; /* Center align the links */
+        text-align: left;
         padding: 10px 0;
     }
     
     nav ul li a {
         display: block;
-    }
-
-    /* Adjusting for mobile */
-    body, html {
-        width: 100%; /* Ensure no overflow */
-        overflow-x: hidden; /* Prevent horizontal scroll */
-    }
-
-    .container {
-        padding: 0 10px; /* Ensure content fits within viewport */
     }
 }
