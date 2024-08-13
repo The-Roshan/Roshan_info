@@ -10,7 +10,57 @@ body {
     position: relative;
     min-height: 100vh; /* Ensure the body takes full viewport height */
 }
+.download-cv-btn{
+    position: relative;
+    color: #bdd14d;
+    border: none;
+    z-index: 2;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px; /* Space between subtitle and button */
+    left: 50px;
+}
 
+.download-cv-btn:before,
+.download-cv-btn:after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    border: 5px solid;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.download-cv-btn:before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #00aced;
+    border-left-color: #00aced;
+}
+
+.download-cv-btn:after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #00aced;
+    border-right-color: #00aced;
+}
+
+.download-cv-btn:hover:before,
+.download-cv-btn:hover:after {
+    border-color: #00aced;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
+
+}
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -87,7 +137,7 @@ body {
 header {
     background: #007bff; /* Blue background color */
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     border-bottom: #ffc107 3px solid; /* Yellow border */
 }
 
@@ -112,7 +162,7 @@ header {
 
 /* Navigation styles */
 nav {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 nav ul {
