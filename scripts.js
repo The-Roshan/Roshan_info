@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Hamburger or navLinks element not found.');
     }
 });
+document.addEventListener('mousemove', function(e) {
+    const bubble = document.querySelector('.cursor-bubble');
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    // Position the bubble based on the cursor and scroll position
+    bubble.style.left = `${e.clientX + scrollX}px`;
+    bubble.style.top = `${e.clientY + scrollY}px`;
+});
