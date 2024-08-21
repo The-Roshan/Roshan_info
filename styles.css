@@ -9,7 +9,22 @@ body {
     animation: gradientBG 30s ease infinite; /* Apply continuous animation */
     position: relative;
     min-height: 100vh; /* Ensure the body takes full viewport height */
+
+        cursor: url('icons8-cursor-30.png'), auto;
+        
 }
+.cursor-bubble {
+    position: absolute;
+    width: 20px; /* Example size */
+    height: 20px; /* Example size */
+    background-color: rgba(0, 0, 255, 0.3); /* Example color with transparency */
+    border-radius: 50%; /* Make it a circle */
+    pointer-events: none; /* Make sure it doesn't block clicks */
+    filter: blur(8px); /* Apply blur effect */
+    transition: top 0.1s ease, left 0.1s ease; /* Smooth movement */
+}
+
+
 .download-cv-btn{
     position: relative;
     color: #bdd14d;
@@ -124,7 +139,6 @@ body {
         transform: translateY(100vh);
     }
 }
-
 /* Footer styles */
 footer {
     background: #007bff; /* Blue background color */
